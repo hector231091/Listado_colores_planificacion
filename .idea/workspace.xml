@@ -1,13 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="8eb95da2-b3d7-4dc4-90a5-b9e7c3751298" name="Default Changelist" comment="" />
+    <list default="true" id="8eb95da2-b3d7-4dc4-90a5-b9e7c3751298" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/1.- Listado pedidos RALES.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/1.- Listado pedidos RALES.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cargar preparación.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cargar preparación.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/input_preparation.py" beforeDir="false" afterPath="$PROJECT_DIR$/input_preparation.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1ca1YMypHrBOWLXt79ZEtdWFDZ4" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -15,7 +47,9 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable" />
   </component>
   <component name="RunManager">
     <configuration name="Cargar preparación" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
@@ -25,9 +59,9 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\hmorales\AppData\Local\Programs\Python\Python38-32\python.exe" />
+      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Cargar preparación.py" />
@@ -53,17 +87,30 @@
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
-    <state x="1559" y="27" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1590828821943">
-      <screen x="1366" y="0" width="1920" height="1040" />
+    <state x="2177" y="37" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591124897288">
+      <screen x="1920" y="0" width="2560" height="1440" />
     </state>
     <state x="1559" y="27" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1590828821943" />
     <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1590752171685" />
-    <state x="2017" y="170" key="FileChooserDialogImpl" timestamp="1590828820811">
-      <screen x="1366" y="0" width="1920" height="1040" />
+    <state x="2177" y="37" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.24.1853.1056/1920.0.2560.1440@1920.0.2560.1440" timestamp="1591124897288" />
+    <state x="2788" y="235" key="FileChooserDialogImpl" timestamp="1591124891242">
+      <screen x="1920" y="0" width="2560" height="1440" />
     </state>
     <state x="2017" y="170" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1590828820811" />
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1590752164031" />
+    <state x="2788" y="235" key="FileChooserDialogImpl/67.24.1853.1056/1920.0.2560.1440@1920.0.2560.1440" timestamp="1591124891242" />
     <state width="1899" height="247" key="GridCell.Tab.0.bottom" timestamp="1590855307798">
       <screen x="1366" y="0" width="1920" height="1040" />
     </state>
@@ -84,5 +131,17 @@
     </state>
     <state width="1899" height="247" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1590855307798" />
     <state width="1345" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1590752200601" />
+    <state x="2727" y="354" key="SettingsEditor" timestamp="1591124874633">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state x="2727" y="354" key="SettingsEditor/67.24.1853.1056/1920.0.2560.1440@1920.0.2560.1440" timestamp="1591124874633" />
+    <state x="2924" y="459" width="618" height="518" key="find.popup" timestamp="1591124866308">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state x="2924" y="459" width="618" height="518" key="find.popup/67.24.1853.1056/1920.0.2560.1440@1920.0.2560.1440" timestamp="1591124866308" />
+    <state x="2896" y="326" width="672" height="678" key="search.everywhere.popup" timestamp="1591124868904">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state x="2896" y="326" width="672" height="678" key="search.everywhere.popup/67.24.1853.1056/1920.0.2560.1440@1920.0.2560.1440" timestamp="1591124868904" />
   </component>
 </project>
