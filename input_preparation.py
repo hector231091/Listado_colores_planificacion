@@ -13,15 +13,34 @@ class ProfilePreparation(Frame):
         Frame.__init__(self, parent, background="cyan")
 
         self.rows_to_show = rows_to_show
-
-        self.__init_horizontal_header()
-
         self.__labels = []
-        self.__init_empty_skeleton(self.__labels)
+
+        self.canvas = Canvas(parent, borderwidth=0)
+        self.inner_frame = Frame(self.canvas)
+        self.inner_frame.bind("<Configure>", self.onFrameConfigure)
+
+        self.scrollbar = Scrollbar(parent, orient="vertical", command=self.canvas.yview)
+        self.scrollbar.pack(side="right", fill="y")
+
+        self.canvas.configure(yscrollcommand=self.scrollbar.set)
+        self.canvas.pack(side="left", fill="both", expand=True)
+        self.canvas.create_window((4, 4), window=self.inner_frame, anchor="nw", tags="self.frame")
+        self.canvas.focus_set()
+        self.canvas.bind("<1>", lambda event: self.canvas.focus_set())
+        self.canvas.bind("<Up>", lambda event: self.canvas.yview_scroll(-1, "units"))
+        self.canvas.bind("<Down>", lambda event: self.canvas.yview_scroll(1, "units"))
+
+        self.__init_horizontal_header(self.inner_frame)
+        self.__init_empty_skeleton(self.inner_frame, self.__labels)
         self.__print_order_list()
 
-    def __init_horizontal_header(self):
-        colour_label = Label(self, text="COLOR", anchor="center", relief="groove")
+    def onFrameConfigure(self, event):
+        # Esta función es ejecutada cada vez que se añade alguna vista al canvas
+        # Su objetivo es actualizar la barra de scroll
+        self.canvas.configure(scrollregion=self.canvas.bbox("all"))
+
+    def __init_horizontal_header(self, frame):
+        colour_label = Label(frame, text="COLOR", anchor="center", relief="groove")
         colour_label.grid(row=0,
                           column=0,
                           padx=(0, CELL_PADDING),
@@ -30,7 +49,7 @@ class ProfilePreparation(Frame):
                           ipady=CELL_MARGIN,
                           sticky=W + E + N + S)
 
-        colour_name_label = Label(self, text="NOMBRE DEL COLOR", anchor="center", relief="groove")
+        colour_name_label = Label(frame, text="NOMBRE DEL COLOR", anchor="center", relief="groove")
         colour_name_label.grid(row=0,
                                column=1,
                                padx=(0, CELL_PADDING),
@@ -39,7 +58,7 @@ class ProfilePreparation(Frame):
                                ipady=CELL_MARGIN,
                                sticky=W + E + N + S)
 
-        article_label = Label(self, text="ARTÍCULO", anchor="center", relief="groove")
+        article_label = Label(frame, text="ARTÍCULO", anchor="center", relief="groove")
         article_label.grid(row=0,
                            column=2,
                            padx=(0, CELL_PADDING),
@@ -48,7 +67,7 @@ class ProfilePreparation(Frame):
                            ipady=CELL_MARGIN,
                            sticky=W + E + N + S)
 
-        article_name_label = Label(self, text="NOMBRE DEL ARTÍCULO", anchor="center", relief="groove")
+        article_name_label = Label(frame, text="NOMBRE DEL ARTÍCULO", anchor="center", relief="groove")
         article_name_label.grid(row=0,
                                 column=3,
                                 padx=(0, CELL_PADDING),
@@ -57,7 +76,7 @@ class ProfilePreparation(Frame):
                                 ipady=CELL_MARGIN,
                                 sticky=W + E + N + S)
 
-        situation_label = Label(self, text="BANDEJA", anchor="center", relief="groove")
+        situation_label = Label(frame, text="BANDEJA", anchor="center", relief="groove")
         situation_label.grid(row=0,
                              column=4,
                              padx=(0, CELL_PADDING),
@@ -66,7 +85,7 @@ class ProfilePreparation(Frame):
                              ipady=CELL_MARGIN,
                              sticky=W + E + N + S)
 
-        quantity_label = Label(self, text="CANTIDAD", anchor="center", relief="groove")
+        quantity_label = Label(frame, text="CANTIDAD", anchor="center", relief="groove")
         quantity_label.grid(row=0,
                             column=5,
                             padx=(0, CELL_PADDING),
@@ -75,7 +94,7 @@ class ProfilePreparation(Frame):
                             ipady=CELL_MARGIN,
                             sticky=W + E + N + S)
 
-        state_label = Label(self, text="ESTADO", anchor="center", relief="groove")
+        state_label = Label(frame, text="ESTADO", anchor="center", relief="groove")
         state_label.grid(row=0,
                          column=6,
                          padx=(0, CELL_PADDING),
@@ -84,15 +103,15 @@ class ProfilePreparation(Frame):
                          ipady=CELL_MARGIN,
                          sticky=W + E + N + S)
 
-    def __init_empty_skeleton(self, labels):
+    def __init_empty_skeleton(self, frame, labels):
         for i in range(self.rows_to_show):
             row = []
             labels.append(row)
-            self.__create_empty_record(i, row)
+            self.__create_empty_record(frame, i, row)
 
-    def __create_empty_record(self, index, row):
+    def __create_empty_record(self, frame, index, row):
         global_index = index + 1
-        column0 = self.__create_empty_record_label()
+        column0 = self.__create_empty_record_label(frame)
         column0.grid(row=global_index,
                      column=0,
                      padx=CELL_PADDING,
@@ -102,7 +121,7 @@ class ProfilePreparation(Frame):
                      sticky=W + E + N + S)
         row.append(column0)
 
-        column1 = self.__create_empty_record_label()
+        column1 = self.__create_empty_record_label(frame)
         column1.grid(row=global_index,
                      column=1,
                      padx=CELL_PADDING,
@@ -112,7 +131,7 @@ class ProfilePreparation(Frame):
                      sticky=W + E + N + S)
         row.append(column1)
 
-        column2 = self.__create_empty_record_label()
+        column2 = self.__create_empty_record_label(frame)
         column2.grid(row=global_index,
                      column=2,
                      padx=CELL_PADDING,
@@ -122,7 +141,7 @@ class ProfilePreparation(Frame):
                      sticky=W + E + N + S)
         row.append(column2)
 
-        column3 = self.__create_empty_record_label()
+        column3 = self.__create_empty_record_label(frame)
         column3.grid(row=global_index,
                      column=3,
                      padx=CELL_PADDING,
@@ -132,7 +151,7 @@ class ProfilePreparation(Frame):
                      sticky=W + E + N + S)
         row.append(column3)
 
-        column4 = self.__create_empty_record_label()
+        column4 = self.__create_empty_record_label(frame)
         column4.grid(row=global_index,
                      column=4,
                      padx=CELL_PADDING,
@@ -142,7 +161,7 @@ class ProfilePreparation(Frame):
                      sticky=W + E + N + S)
         row.append(column4)
 
-        column5 = self.__create_empty_record_label()
+        column5 = self.__create_empty_record_label(frame)
         column5.grid(row=global_index,
                      column=5,
                      padx=CELL_PADDING,
@@ -152,7 +171,7 @@ class ProfilePreparation(Frame):
                      sticky=W + E + N + S)
         row.append(column5)
 
-        column6 = self.__create_empty_record_checkbutton()
+        column6 = self.__create_empty_record_checkbutton(frame)
         column6.grid(row=global_index,
                      column=6,
                      padx=CELL_PADDING,
@@ -162,20 +181,20 @@ class ProfilePreparation(Frame):
                      sticky=W + E + N + S)
         row.append(column6)
 
-    def __create_empty_record_entry(self):
-        return Entry(self,
+    def __create_empty_record_entry(self, frame):
+        return Entry(frame,
                      background="white",
                      relief="groove",
                      justify="center")
 
-    def __create_empty_record_label(self):
-        return Label(self,
+    def __create_empty_record_label(self, frame):
+        return Label(frame,
                      background="white",
                      relief="groove",
                      justify="center")
 
-    def __create_empty_record_checkbutton(self):
-        return Checkbutton(self,
+    def __create_empty_record_checkbutton(self, frame):
+        return Checkbutton(frame,
                            relief="groove",
                            justify="center")
 
